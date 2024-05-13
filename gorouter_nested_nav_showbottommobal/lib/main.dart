@@ -69,7 +69,7 @@ class Page2 extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {
             showModalBottomSheet(
-                useRootNavigator: true,
+                useRootNavigator: true, // will work if this is false
                 context: context,
                 builder: (context) {
                   return Container(
@@ -78,6 +78,7 @@ class Page2 extends StatelessWidget {
                     child: Center(
                       child: ElevatedButton(
                         onPressed: () {
+                          // Navigator.of(context, rootNavigator: true).pop(); // with this it works too
                           context.pop(true);
                         },
                         child: const Text('Close modal'),
